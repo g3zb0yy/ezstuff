@@ -9,7 +9,7 @@ def main():
             for i in nice:
                 vide.append(i + ":" + hashlib.sha512(i.encode('utf-8')).hexdigest() + "\n")
 
-            listToStr = ' '.join([str(elem) for elem in vide]) 
+            listToStr = ' '.join([str(elem) for elem in vide]) #cast array to string
             final = open("salope.txt", "w")
             final.write(listToStr)
     except:
