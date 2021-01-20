@@ -27,6 +27,7 @@ def fuzz(site, wordlist):
 		with open(wordlist, 'r') as file:
 			wl = file.readlines()
 			wl = [x.strip() for x in wl]
+
 		with requests.session() as s:
 			ug = {"__cfduid": "d9158d4877e0623d772a0bbe76a4fbb0e1610165387"}
 			for i in wl:	
