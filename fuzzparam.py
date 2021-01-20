@@ -24,6 +24,7 @@ def main():
 
 def fuzz(site, wordlist):
 	try:
+		clear()
 		with open(wordlist, 'r') as file:
 			wl = file.readlines()
 			wl = [x.strip() for x in wl]
@@ -33,9 +34,8 @@ def fuzz(site, wordlist):
 			for i in wl:	
 				req = s.get(site + "?" + i + "=reflect", cookies=ug)
 				string = "reflect"
-
+				print(f"{Fore.RED}[Failed]: " + i)
 				if string in req.text:
-					clear()
 					print("\n" + f"{Fore.GREEN}" + "[Parameter]: ?" + i + "=" + f"{Fore.RESET}" + "\n")
 	except:
 		pass
