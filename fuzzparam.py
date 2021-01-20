@@ -24,11 +24,9 @@ def main():
 
 def fuzz(site, wordlist):
 	try:
-		clear()
 		with open(wordlist, 'r') as file:
 			wl = file.readlines()
 			wl = [x.strip() for x in wl]
-
 		with requests.session() as s:
 			ug = {"__cfduid": "d9158d4877e0623d772a0bbe76a4fbb0e1610165387"}
 			for i in wl:	
@@ -36,7 +34,8 @@ def fuzz(site, wordlist):
 				string = "reflect"
 				print(f"{Fore.RED}[Failed]: " + i)
 				if string in req.text:
-					print("\n" + f"{Fore.GREEN}" + "[Parameter]: ?" + i + "=" + f"{Fore.RESET}" + "\n")
+					print("\n" + f"{Fore.GREEN}" + "[Success]: ?" + i + "=" + f"{Fore.RESET}" + "\n")
+					break
 	except:
 		pass
 
