@@ -4,6 +4,9 @@ import sys
 from colorama import Fore
 import os
 
+def usage():
+	print(f"{Fore.GREEN}[Usage]: python3 fuzz.py -u [url/*.php] -w [wordlist.txt]{Fore.RESET}")
+
 def clear():
 	os.system("cls" if os.name == "nt" else "clear")
 
@@ -11,7 +14,11 @@ def main():
 	try:
 		if sys.argv[1] == "-u" and sys.argv[3] == "-w":
 				fuzz(sys.argv[2], sys.argv[4])
+		else:
+			usage()
+			pass
 	except:
+		usage()
 		pass
 
 def fuzz(site, wordlist):
