@@ -24,6 +24,7 @@ def main():
 
 def fuzz(site, wordlist):
 	try:
+		clear()
 		with open(wordlist, 'r') as file:
 			wl = file.readlines()
 			wl = [x.strip() for x in wl]
