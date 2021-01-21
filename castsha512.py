@@ -2,7 +2,7 @@ import hashlib
 
 def main():
     try:
-        with open("output.txt", "r") as file:
+        with open("list.txt", "r") as file:
             nice = file.read().splitlines()
             file.close()
             vide = []
