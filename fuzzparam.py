@@ -1,5 +1,4 @@
 import requests 
-from bs4 import BeautifulSoup
 import sys
 from colorama import Fore
 import os
