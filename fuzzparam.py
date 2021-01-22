@@ -33,9 +33,9 @@ def fuzz(site, wordlist):
 			for i in wl:	
 				req = s.get(site + "?" + i + "=reflect", cookies=ug)
 				string = "reflect"
-				print(f"{Fore.RED}[Failed]: " + i)
+				print(f"{Fore.RED}[Failed]: " + i + f"{Fore.RESET}")
 				if string in req.text:
-					print("\n" + f"{Fore.GREEN}" + "[Success]: ?" + i + "=" + f"{Fore.RESET}" + "\n")
+					print("\n" + f"{Fore.GREEN}" + "[Success]: ?" + i + "=" + f"{Fore.RESET}")
 					break
 	except:
 		pass
