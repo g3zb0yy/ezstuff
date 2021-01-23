@@ -2,7 +2,6 @@ from bs4 import BeautifulSoup
 import sys
 import requests
 from colorama import Fore
-import json
 
 def main():
 	try:
