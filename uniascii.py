@@ -10,6 +10,7 @@ def main():
 
 		elif sys.argv[1] == "--image":
 			image(sys.argv[2])
+
 	except:
 		pass
 
@@ -35,6 +36,7 @@ def unitoascii(message):
 		for x in decode:
 			print(f"{Fore.GREEN}[Decoded]: " + "".join(decode))
 			break
+
 	except:
 		pass
 
@@ -46,7 +48,8 @@ def image(image):
 		with open("rgb.txt", "w") as file:
 			for line in array:
 				file.write(line)
-			file.close()	
+			file.close()
+			print(f"{Fore.GREEN}[File]: {Fore.YELLOW}" + "".join(str(file)))
 	except:
 		pass
 
