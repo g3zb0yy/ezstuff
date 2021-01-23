@@ -19,8 +19,8 @@ def person(country):
 	try:
 		if country == "FR":
 			client = {"__cfduid":"d2621dc544d7cac81c51b84e6db444fe81611369636"}
-			fr = requests.get(sites[0], cookies=client)
-			soup = BeautifulSoup(fr.text, 'html.parser')
+			req = requests.get(sites[0], cookies=client)
+			soup = BeautifulSoup(req.text, 'html.parser')
 			grab = soup.find_all(attrs={"type":"text"})
 			arr = [str(x) for x in grab]
 			vide = []
@@ -40,8 +40,8 @@ def person(country):
 
 		elif country == "DZ":
 			client = {"__cfduid":"d2621dc544d7cac81c51b84e6db444fe81611369636"}
-			fr = requests.get(sites[1], cookies=client)
-			soup = BeautifulSoup(fr.text, 'html.parser')
+			req = requests.get(sites[1], cookies=client)
+			soup = BeautifulSoup(req.text, 'html.parser')
 			grab = soup.find_all(attrs={"type":"text"})
 			arr = [str(x) for x in grab]
 			vide = []
